@@ -1,0 +1,14 @@
+### Dockerfile.full ###
+FROM texlive:extra
+
+# Switch to root user
+USER root
+
+# Install full TeX packages
+RUN apt-get update && \
+    apt-get install -y \
+    texlive-full && \
+    rm -rf /var/lib/apt/lists/*
+
+# Switch to non-root user
+USER texuser

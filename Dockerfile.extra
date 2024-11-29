@@ -1,0 +1,16 @@
+### Dockerfile.extra ###
+FROM texlive:recommended
+
+# Switch to root user
+USER root
+
+# Install extra TeX packages
+RUN apt-get update && \
+    apt-get install -y \
+    texlive-latex-extra \
+    texlive-fonts-extra \
+    texlive-extra-utils && \
+    rm -rf /var/lib/apt/lists/*
+
+# Switch to non-root user
+USER texuser

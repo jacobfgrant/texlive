@@ -1,5 +1,5 @@
 ### Dockerfile.full ###
-FROM texlive:extra
+FROM texlive-extra
 
 # Switch to root user
 USER root

@@ -44,10 +44,10 @@ done
 echo "Starting builds..."
 for version in "${VERSIONS[@]}"
 do
-    echo "Building texlive:$version..."
-    if ! docker build $NO_CACHE -t "texlive:$version" -f "Dockerfile.$version" .
+    echo "Building texlive-$version..."
+    if ! docker build $NO_CACHE -t "texlive-$version" -f "Dockerfile.$version" .
     then
-        echo "Error: Failed to build texlive:$version"
+        echo "Error: Failed to build texlive-$version"
         exit 1
     fi
 done

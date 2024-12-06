@@ -57,7 +57,7 @@ jobs:
           push: ${{ github.event_name != 'pull_request' }}
           tags: |
             ${{ env.GHCR_REGISTRY }}/${{ env.GHCR_IMAGE }}-base:latest
-            ${{ env.DOCKERHUB_USERNAME }}/texlive-base:latest
+            ${{ env.DOCKERHUB_REGISTRY }}/${{ env.DOCKERHUB_IMAGE }}-base:latest
 
       - name: Build and push recommended
         uses: docker/build-push-action@v5
@@ -68,7 +68,7 @@ jobs:
           push: ${{ github.event_name != 'pull_request' }}
           tags: |
             ${{ env.GHCR_REGISTRY }}/${{ env.GHCR_IMAGE }}-recommended:latest
-            ${{ env.DOCKERHUB_USERNAME }}/texlive-recommended:latest
+            ${{ env.DOCKERHUB_REGISTRY }}/${{ env.DOCKERHUB_IMAGE }}-recommended:latest
         
       - name: Build and push extra
         uses: docker/build-push-action@v5
@@ -79,7 +79,7 @@ jobs:
           push: ${{ github.event_name != 'pull_request' }}
           tags: |
             ${{ env.GHCR_REGISTRY }}/${{ env.GHCR_IMAGE }}-extra:latest
-            ${{ env.DOCKERHUB_USERNAME }}/texlive-extra:latest
+            ${{ env.DOCKERHUB_REGISTRY }}/${{ env.DOCKERHUB_IMAGE }}-extra:latest
         
 
       - name: Build and push full
@@ -91,4 +91,4 @@ jobs:
           push: ${{ github.event_name != 'pull_request' }}
           tags: |
             ${{ env.GHCR_REGISTRY }}/${{ env.GHCR_IMAGE }}-full:latest
-            ${{ env.DOCKERHUB_USERNAME }}/texlive-full:latest
+            ${{ env.DOCKERHUB_REGISTRY }}/${{ env.DOCKERHUB_IMAGE }}-full:latest

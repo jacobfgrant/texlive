@@ -56,8 +56,8 @@ jobs:
           platforms: linux/amd64,linux/arm64
           push: ${{ github.event_name != 'pull_request' }}
           tags: |
-            ${{ env.GHCR_REGISTRY }}/${{ env.GHCR_IMAGE }}-base:latest
-            ${{ env.DOCKERHUB_REGISTRY }}/${{ env.DOCKERHUB_IMAGE }}-base:latest
+            ${{ env.GHCR_REGISTRY }}/${{ env.GHCR_IMAGE }}:base
+            ${{ env.DOCKERHUB_REGISTRY }}/${{ env.DOCKERHUB_IMAGE }}:base
 
       - name: Build and push recommended
         uses: docker/build-push-action@v5
@@ -67,8 +67,8 @@ jobs:
           platforms: linux/amd64,linux/arm64
           push: ${{ github.event_name != 'pull_request' }}
           tags: |
-            ${{ env.GHCR_REGISTRY }}/${{ env.GHCR_IMAGE }}-recommended:latest
-            ${{ env.DOCKERHUB_REGISTRY }}/${{ env.DOCKERHUB_IMAGE }}-recommended:latest
+            ${{ env.GHCR_REGISTRY }}/${{ env.GHCR_IMAGE }}:recommended
+            ${{ env.DOCKERHUB_REGISTRY }}/${{ env.DOCKERHUB_IMAGE }}:recommended
         
       - name: Build and push extra
         uses: docker/build-push-action@v5
@@ -78,8 +78,8 @@ jobs:
           platforms: linux/amd64,linux/arm64
           push: ${{ github.event_name != 'pull_request' }}
           tags: |
-            ${{ env.GHCR_REGISTRY }}/${{ env.GHCR_IMAGE }}-extra:latest
-            ${{ env.DOCKERHUB_REGISTRY }}/${{ env.DOCKERHUB_IMAGE }}-extra:latest
+            ${{ env.GHCR_REGISTRY }}/${{ env.GHCR_IMAGE }}:extra
+            ${{ env.DOCKERHUB_REGISTRY }}/${{ env.DOCKERHUB_IMAGE }}:extra
         
 
       - name: Build and push full
@@ -90,5 +90,5 @@ jobs:
           platforms: linux/amd64,linux/arm64
           push: ${{ github.event_name != 'pull_request' }}
           tags: |
-            ${{ env.GHCR_REGISTRY }}/${{ env.GHCR_IMAGE }}-full:latest
-            ${{ env.DOCKERHUB_REGISTRY }}/${{ env.DOCKERHUB_IMAGE }}-full:latest
+            ${{ env.GHCR_REGISTRY }}/${{ env.GHCR_IMAGE }}:full
+            ${{ env.DOCKERHUB_REGISTRY }}/${{ env.DOCKERHUB_IMAGE }}:full

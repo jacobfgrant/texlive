@@ -1,5 +1,5 @@
 ### Dockerfile.extra ###
-FROM texlive-recommended
+FROM jacobfgrant/texlive:recommended
 
 # Switch to root user
 USER root
